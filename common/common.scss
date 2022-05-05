@@ -1,0 +1,36 @@
+$max-width: 600px;
+
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+
+  &.wrap::before, &.wrap::after {
+    display: none;
+  }
+
+  .search-widget .search-icon {
+    display: none;
+  }
+
+  .search-widget {
+    width: $max-width;
+  }
+
+  .results {
+    box-sizing: border-box;
+    background: var(--secondary);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+    position: absolute;
+    width: $max-width;
+    z-index: 90000;
+    padding: 0.5em;
+    @include breakpoint(mobile-extra-large) {
+      width: 100%;
+    }
+    ul,
+    ol {
+      list-style-type: none;
+      margin: 0;
+    }
+  }
+}
